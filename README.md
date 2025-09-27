@@ -15,6 +15,33 @@ This project also serves as a proof-of-concept that a **plugin system can be con
 
 > ⚠️ Note: The code was written quickly. The focus was on algorithms, patterns, and architectural design of the plugin system rather than production-ready implementation.
 
+flowchart TD
+    %% Main Application
+    A[Application / Main] -->|creates| B[EventBus (singleton)]
+    
+    %% EventBus
+    B -->|notifies subscribers| D[UI Plugin / Other Plugins]
+    B -->|receives window events| C[IPlugin_Platform]
+    
+    %% IPlugin_Platform
+    C -->|publishes window events<br>(Resize, MouseMove, LMouseDown)| B
+    
+    %% Plugins
+    D -->|reacts / updates state / publishes new events| B
+    D -->|sends render data| E[Renderer]
+    
+    %% Renderer
+    E -->|draws UI state| F[Screen]
+    
+    %% Styles
+    style A fill:#f9f,stroke:#333,stroke-width:2px
+    style B fill:#ff9,stroke:#333,stroke-width:2px
+    style C fill:#9ff,stroke:#333,stroke-width:2px
+    style D fill:#9f9,stroke:#333,stroke-width:2px
+    style E fill:#f99,stroke:#333,stroke-width:2px
+    style F fill:#ccc,stroke:#333,stroke-width:2px
+
+
 ---
 
 ## Features
