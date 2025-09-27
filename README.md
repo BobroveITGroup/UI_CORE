@@ -46,12 +46,18 @@ This project also serves as a proof-of-concept that a **plugin system can be con
 
 ## Architecture Overview
 
-```mermaid
 flowchart TD
-    A[Application / Main] --> B[EventBus(singleton)]
+    A[Application / Main] --> B[EventBus (singleton)]
     B --> C[IPlugin_Platform]
     C --> B
     B --> D[UI Plugin / Other Plugins]
     D --> B
     D --> E[Renderer]
     E --> F[Screen]
+
+    style A fill:#f9f,stroke:#333,stroke-width:2px
+    style B fill:#ff9,stroke:#333,stroke-width:2px
+    style C fill:#9ff,stroke:#333,stroke-width:2px
+    style D fill:#9f9,stroke:#333,stroke-width:2px
+    style E fill:#f99,stroke:#333,stroke-width:2px
+    style F fill:#ccc,stroke:#333,stroke-width:2px
