@@ -1,4 +1,4 @@
-#include "Platform.h"
+#include "Wrap_Platform.h"
 #include <iostream>
 
 bool PlatformWrapper::LoadDLL(const char* dllName) 
