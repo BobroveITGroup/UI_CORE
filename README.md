@@ -49,9 +49,9 @@ This project also serves as a proof-of-concept that a **plugin system can be con
 ```mermaid
 flowchart TD
     A[Application / Main] --> B[EventBus (singleton)]
-    B --> D[UI Plugin / Other Plugins]
     B --> C[IPlugin_Platform]
     C --> B
+    B --> D[UI Plugin / Other Plugins]
     D --> B
     D --> E[Renderer]
     E --> F[Screen]
@@ -63,4 +63,3 @@ flowchart TD
     style D fill:#9f9,stroke:#333,stroke-width:2px
     style E fill:#f99,stroke:#333,stroke-width:2px
     style F fill:#ccc,stroke:#333,stroke-width:2px
-
