@@ -56,10 +56,10 @@ flowchart TD
     D --> E[Renderer]
     E --> F[Screen]
 
-    style A fill:#f9f,stroke:#333,stroke-width:2px
-    style B fill:#ff9,stroke:#333,stroke-width:2px
-    style C fill:#9ff,stroke:#333,stroke-width:2px
-    style D fill:#9f9,stroke:#333,stroke-width:2px
-    style E fill:#f99,stroke:#333,stroke-width:2px
-    style F fill:#ccc,stroke:#333,stroke-width:2px
+    style A fill:#f9f,stroke:#333,stroke-width:2px,color:#000
+    style B fill:#ff9,stroke:#333,stroke-width:2px,color:#000
+    style C fill:#9ff,stroke:#333,stroke-width:2px,color:#000
+    style D fill:#9f9,stroke:#333,stroke-width:2px,color:#000
+    style E fill:#f99,stroke:#333,stroke-width:2px,color:#000
+    style F fill:#ccc,stroke:#333,stroke-width:2px,color:#000
 ```
