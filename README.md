@@ -55,12 +55,3 @@ flowchart TD
     D --> B
     D --> E[Renderer]
     E --> F[Screen]
-
-    %% Стиль блоков
-    style A fill:#f9f,stroke:#333,stroke-width:2px
-    style B fill:#ff9,stroke:#333,stroke-width:2px
-    style C fill:#9ff,stroke:#333,stroke-width:2px
-    style D fill:#9f9,stroke:#333,stroke-width:2px
-    style E fill:#f99,stroke:#333,stroke-width:2px
-    style F fill:#ccc,stroke:#333,stroke-width:2px
-
