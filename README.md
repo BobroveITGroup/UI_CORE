@@ -1,8 +1,8 @@
 ## Connect with the Author
 
-If you are interested in **articles about designing plugin systems** or want to see more of my projects, check out my [LinkedIn profile]([www.linkedin.com/in/mmbcpp](https://www.linkedin.com/in/mmbcpp/)) 👋  
+If you are interested in **articles about designing plugin systems** or want to see more of my projects, check out my [LinkedIn profile](https://www.linkedin.com/in/mmbcpp/) 👋  
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Michael%20Bobrove-blue?logo=linkedin&logoColor=white)]([www.linkedin.com/in/mmbcpp](https://www.linkedin.com/in/mmbcpp/))
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Michael%20Bobrove-blue?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/mmbcpp/)
 
 
 # UI_CORE
