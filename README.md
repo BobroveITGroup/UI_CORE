@@ -4,6 +4,7 @@ If you are interested in **articles about designing plugin systems** or want to 
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Michael%20Bobrove-blue?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/mmbcpp/)
 
+---
 
 # UI_CORE
 
@@ -14,33 +15,6 @@ The main goal of this project is to verify **hot-swap rendering** and prove that
 This project also serves as a proof-of-concept that a **plugin system can be convenient for development** and can scale to larger projects.
 
 > ⚠️ Note: The code was written quickly. The focus was on algorithms, patterns, and architectural design of the plugin system rather than production-ready implementation.
-
-flowchart TD
-    %% Main Application
-    A[Application / Main] -->|creates| B[EventBus (singleton)]
-    
-    %% EventBus
-    B -->|notifies subscribers| D[UI Plugin / Other Plugins]
-    B -->|receives window events| C[IPlugin_Platform]
-    
-    %% IPlugin_Platform
-    C -->|publishes window events<br>(Resize, MouseMove, LMouseDown)| B
-    
-    %% Plugins
-    D -->|reacts / updates state / publishes new events| B
-    D -->|sends render data| E[Renderer]
-    
-    %% Renderer
-    E -->|draws UI state| F[Screen]
-    
-    %% Styles
-    style A fill:#f9f,stroke:#333,stroke-width:2px
-    style B fill:#ff9,stroke:#333,stroke-width:2px
-    style C fill:#9ff,stroke:#333,stroke-width:2px
-    style D fill:#9f9,stroke:#333,stroke-width:2px
-    style E fill:#f99,stroke:#333,stroke-width:2px
-    style F fill:#ccc,stroke:#333,stroke-width:2px
-
 
 ---
 
@@ -69,3 +43,22 @@ flowchart TD
    - Example usage can be found in the test/example folders.
 
 ---
+
+## Architecture Overview
+
+```mermaid
+flowchart TD
+    A[Application / Main] -->|creates| B[EventBus (singleton)]
+    B -->|notifies subscribers| D[UI Plugin / Other Plugins]
+    B -->|receives window events| C[IPlugin_Platform]
+    C -->|publishes window events<br>(Resize, MouseMove, LMouseDown)| B
+    D -->|reacts / updates state / publishes new events| B
+    D -->|sends render data| E[Renderer]
+    E -->|draws UI state| F[Screen]
+
+    style A fill:#f9f,stroke:#333,stroke-width:2px
+    style B fill:#ff9,stroke:#333,stroke-width:2px
+    style C fill:#9ff,stroke:#333,stroke-width:2px
+    style D fill:#9f9,stroke:#333,stroke-width:2px
+    style E fill:#f99,stroke:#333,stroke-width:2px
+    style F fill:#ccc,stroke:#333,stroke-width:2px
