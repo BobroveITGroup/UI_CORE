@@ -48,10 +48,10 @@ This project also serves as a proof-of-concept that a **plugin system can be con
 
 ```mermaid
 flowchart TD
-    A[Application / Main] --> B[EventBus (singleton)]
+    A[Application_Main] --> B[EventBus_singleton]
     B --> C[IPlugin_Platform]
     C --> B
-    B --> D[UI Plugin / Other Plugins]
+    B --> D[UI_Plugin_Other]
     D --> B
     D --> E[Renderer]
     E --> F[Screen]
