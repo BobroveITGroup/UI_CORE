@@ -48,17 +48,19 @@ This project also serves as a proof-of-concept that a **plugin system can be con
 
 ```mermaid
 flowchart TD
-    A[Application / Main] -->|creates| B[EventBus (singleton)]
-    B -->|notifies subscribers| D[UI Plugin / Other Plugins]
-    B -->|receives window events| C[IPlugin_Platform]
-    C -->|publishes window events<br>(Resize, MouseMove, LMouseDown)| B
-    D -->|reacts / updates state / publishes new events| B
-    D -->|sends render data| E[Renderer]
-    E -->|draws UI state| F[Screen]
+    A[Application / Main] --> B[EventBus (singleton)]
+    B --> D[UI Plugin / Other Plugins]
+    B --> C[IPlugin_Platform]
+    C --> B
+    D --> B
+    D --> E[Renderer]
+    E --> F[Screen]
 
+    %% Стиль блоков
     style A fill:#f9f,stroke:#333,stroke-width:2px
     style B fill:#ff9,stroke:#333,stroke-width:2px
     style C fill:#9ff,stroke:#333,stroke-width:2px
     style D fill:#9f9,stroke:#333,stroke-width:2px
     style E fill:#f99,stroke:#333,stroke-width:2px
     style F fill:#ccc,stroke:#333,stroke-width:2px
+
