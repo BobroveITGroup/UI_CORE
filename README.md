@@ -49,13 +49,21 @@ This project also serves as a proof-of-concept that a **plugin system can be con
 ```mermaid
 flowchart TD
     A[Application_Main] --> B[EventBus_singleton]
-    B --> C[IPlugin_Platform]
-    C --> B
-    B --> D[UI_Plugin_Other]
-    D --> B
+    
+    %% Подписка плагинов на события
+    D[UI_Plugin_Other] -.-> B
+    C[IPlugin_Platform] -.-> B
+
+    %% Публикация событий от платформы
+    C -->|publishes events| B
+    B -->|delivers events| D
+    B -->|delivers events| C
+
+    %% Рендер
     D --> E[Renderer]
     E --> F[Screen]
 
+    %% Стиль блоков
     style A fill:#f9f,stroke:#333,stroke-width:2px,color:#000
     style B fill:#ff9,stroke:#333,stroke-width:2px,color:#000
     style C fill:#9ff,stroke:#333,stroke-width:2px,color:#000
@@ -63,3 +71,4 @@ flowchart TD
     style E fill:#f99,stroke:#333,stroke-width:2px,color:#000
     style F fill:#ccc,stroke:#333,stroke-width:2px,color:#000
 ```
+
