@@ -55,4 +55,3 @@ flowchart TD
     D --> B
     D --> E[Renderer]
     E --> F[Screen]
-
